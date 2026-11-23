@@ -46,18 +46,68 @@ import numpy as np
 
 #Step 1: Create dataset
 
+import pandas as pd
+
+#Step 1: Create a sample retail dataset
+
+data = {
+
+"Order_ID": [101, 102, 103, 104, 105, 105, 106, 107],
+
+"Product": ["Laptop", "Tablet", "Phone", "Printer", "Monitor", "Monitor", "Tablet", "Laptop"],
+
+"Region": ["East", "West", "North", "South", "East", "East", "West", None], "Sales": [55000, 32000, None, 18000, 24000, 24000, 32000, 55000],
+
+
+"Discount": [5, None, 10, 8, 5, 5, None, 8],
+
+"Profit": [8000, 5000, 4000, None, 3000, 3000, 5000, 8000]
+
+}
+
+df= pd.DataFrame(data)
+
+print("---- Original Retail Dataset ----")
+
+print(df)
+
+print("\nDataset Shape:", df.shape)
+
+
 #Step 2: Plot Revenue and Expenses
+
+print("\nMissing Values per Column:\n", df. isnull() sum())
 
 #Step 3: Add titles, labels, and grid
 
+df["Sales"] fillna(df["Sales"] mean(), inplace True)
+
+df["Discount"]. fillna(df["Discount"] mean(), inplace True)
+
+df["Profit"] fillna(df["Profit"].mean(), inplace True)
+
 #Step 4: Add legend
+
+df["Region"].fillna(df("Region"].mode()[0], inplace True)
 
 #Step 5: Annotate highest revenue and expense
 
+df.drop duplicates (inplace=True)
+
+print("\n---- Cleaned Retail Dataset --")
+
+print(df)
+
+print("\nDataset Shape after Cleaning:", df.shape)
+
+
 #Step 6: Adjust layout and show plot
 
-## Output
+print("\nSummary Statistics:\n", df.describe())
 
+
+## Output
+<img width="717" height="1600" alt="WhatsApp Image 2026-11-23 at 9 21 44 PM" src="https://github.com/user-attachments/assets/d164ab74-71bd-4e21-9ec7-a2473afd3c93" />
 
 ## Result
 
